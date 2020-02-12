@@ -1,4 +1,4 @@
-#include "finalBoss_Dan.h"
+#include "finalBoss_Dan/finalBoss_Dan.h"
 
 void endGame(char victor, int player)
 {
@@ -40,5 +40,6 @@ void drawGame(char game, char display) //draw our game
 
 
 }
+
 int playerXY() //determine who is who
 {};

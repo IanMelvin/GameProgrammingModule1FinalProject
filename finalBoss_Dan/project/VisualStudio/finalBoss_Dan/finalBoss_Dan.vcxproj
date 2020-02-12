@@ -151,6 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\source\finalBoss_Dan\finalBossLoki.c" />
     <ClCompile Include="..\..\..\source\finalBoss_Dan\finalBoss_Dan.c" />
   </ItemGroup>
   <ItemGroup>
