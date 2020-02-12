@@ -26,5 +26,8 @@
     <ClInclude Include="..\..\..\include\finalBoss_Dan\finalBoss_Dan.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\include\finalBoss_Dan\finalBossLoki.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

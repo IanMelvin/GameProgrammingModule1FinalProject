@@ -155,9 +155,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\source\finalBossDantest\launchTTT.c" />
     <ClCompile Include="..\..\..\source\finalBossDantest\main.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\include\finalBossDantest\launchTTT.h" />
     <ClInclude Include="..\..\..\include\finalBossDantest\main.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

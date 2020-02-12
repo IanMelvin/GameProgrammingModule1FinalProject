@@ -1,3 +1,6 @@
+#include "finalBoss_Dan/finalBossLoki.h"
+#include <stdio.h>
+
 int getCordX(char game, int player, int phase)
 {
 	int xcord;
@@ -112,4 +115,34 @@ int getCordY(char game, int player, int phase)
 	}
 	
 	printf("\n");
+
+	return 0;
+}
+// try this again
+
+
+
+int endstate()
+{
+	return 0;
+}
+
+int errorState()
+{
+	return 0;
+}
+
+void fillArray(char* ptr, int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		*ptr = ' ';
+		printf("%c", *ptr);
+		ptr++;
+	}
+
+	for (int i = 0; i < size; i++)
+	{
+		ptr--;
+	}
 }

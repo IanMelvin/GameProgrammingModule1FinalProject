@@ -18,9 +18,15 @@
     <ClCompile Include="..\..\..\source\finalBossDantest\main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\source\finalBossDantest\launchTTT.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\include\finalBossDantest\main.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\finalBossDantest\launchTTT.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

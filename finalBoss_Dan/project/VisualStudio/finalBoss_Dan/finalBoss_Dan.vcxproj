@@ -155,6 +155,7 @@
     <ClCompile Include="..\..\..\source\finalBoss_Dan\finalBoss_Dan.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\include\finalBoss_Dan\finalBossLoki.h" />
     <ClInclude Include="..\..\..\include\finalBoss_Dan\finalBoss_Dan.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
