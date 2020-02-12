@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29102.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "finalBossDantest", "..\..\finalBossDantest\finalBossDantest.vcxproj", "{CE869CEA-649F-4BFB-9461-D880B366ED6E}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "finalBoss_Dan", "..\..\finalBoss_Dan\finalBoss_Dan.vcxproj", "{7A081CEE-CD11-4A8D-8716-F29F920C4474}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{CE869CEA-649F-4BFB-9461-D880B366ED6E}.Release|x64.Build.0 = Release|x64
 		{CE869CEA-649F-4BFB-9461-D880B366ED6E}.Release|x86.ActiveCfg = Release|Win32
 		{CE869CEA-649F-4BFB-9461-D880B366ED6E}.Release|x86.Build.0 = Release|Win32
+		{7A081CEE-CD11-4A8D-8716-F29F920C4474}.Debug|x64.ActiveCfg = Debug|x64
+		{7A081CEE-CD11-4A8D-8716-F29F920C4474}.Debug|x64.Build.0 = Debug|x64
+		{7A081CEE-CD11-4A8D-8716-F29F920C4474}.Debug|x86.ActiveCfg = Debug|Win32
+		{7A081CEE-CD11-4A8D-8716-F29F920C4474}.Debug|x86.Build.0 = Debug|Win32
+		{7A081CEE-CD11-4A8D-8716-F29F920C4474}.Release|x64.ActiveCfg = Release|x64
+		{7A081CEE-CD11-4A8D-8716-F29F920C4474}.Release|x64.Build.0 = Release|x64
+		{7A081CEE-CD11-4A8D-8716-F29F920C4474}.Release|x86.ActiveCfg = Release|Win32
+		{7A081CEE-CD11-4A8D-8716-F29F920C4474}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
