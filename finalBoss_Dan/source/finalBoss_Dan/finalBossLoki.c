@@ -1,3 +1,33 @@
+/*
+MIT License
+
+Copyright (c) 2020 IanMelvin
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+Name: finalBossLoki.c
+
+Description: Holds the prototypes for the launchTTT.c functions
+
+Contributers: Loki Sanguine & Ian Melvin 
+*/
+
 #include "finalBoss_Dan/finalBossLoki.h"
 #include <stdio.h>
 #include <stdbool.h>
@@ -123,6 +153,13 @@ int getCordY(char game, int player, int phase)
 }
 // try this again
 
+/*
+	Purpose: Display the appropriate message for ending the game and return a value to end the game loop
+
+	Parameters: Integer variable
+
+	Return possibilities: 1
+*/
 int endState(int winner)
 {
 	if (winner == 3)
@@ -144,6 +181,13 @@ int endState(int winner)
 	return 1;
 }
 
+/*
+	Purpose: Output the error message so the user knows what they did
+
+	Parameters: None
+
+	Return possibilities: NONE
+*/
 void errorState()
 {
 	char c[] = "You have choosen an invalid location.";
@@ -152,6 +196,13 @@ void errorState()
 	printf("\n \n");
 }
 
+/*
+	Purpose: Checks to see if the space choosen is valid
+
+	Parameters: Character pointer, 2 integers
+
+	Return possibilities: true or false
+*/
 bool checkSpace(char *ptr, int x, int y)
 {
 	if (x < 0 || y < 0)
@@ -167,6 +218,13 @@ bool checkSpace(char *ptr, int x, int y)
 	return true;
 }
 
+/*
+	Purpose: Alters the turn order
+
+	Parameters: integer variable
+
+	Return possibilities: 0 or 1
+*/
 int updateTurn(int player)
 {
 	if (player == 1)
@@ -181,6 +239,13 @@ int updateTurn(int player)
 	return player;
 }
 
+/*
+	Purpose: Fills game array with blank spaces
+
+	Parameters: Character pointer, 1 integer
+	
+	Return possibilities: NONE
+*/
 void fillArray(char* ptr, int size)
 {
 	for (int i = 0; i < size; i++)
