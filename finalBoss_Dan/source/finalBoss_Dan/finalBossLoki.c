@@ -108,11 +108,11 @@ int getCordY(char game, int player, int phase)//gets ycoord for alteration of bo
 	case 'B':
 		if (phase == 0 && player %2 == 0)
 		{
-			print("Where would you like to place a ship?");
+			printf("Where would you like to place a ship?");
 		}
 		else if (phase == 0 && player % 2 != 0)
 		{
-			print("Where would you like to place a ship?");//Phase 0 placing ships
+			printf("Where would you like to place a ship?");//Phase 0 placing ships
 		}
 		else if (phase == 1 && player % 2 == 0)
 		{
