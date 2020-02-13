@@ -1,5 +1,6 @@
 #include "finalBoss_Dan/finalBossLoki.h"
 #include <stdio.h>
+#include <stdbool.h>
 
 int getCordX(char game, int player, int phase)
 {
@@ -47,16 +48,19 @@ int getCordX(char game, int player, int phase)
 		phase = 0;
 		if (player == 1)
 		{
-			printf("Where would you like to put an X value (xcoord)");
+			printf("Where would you like to put an X value (xcoord) ");
 		}
 		else if (player == 2)
 		{
-			printf("Where would you like to put an O value (xcoord)");
+			printf("Where would you like to put an O value (xcoord) ");
 		}
 		break;
 	}
 	scanf_s("%d", &xcord);
 	printf("\n");
+
+
+	return xcord-1;
 }
 int getCordY(char game, int player, int phase)
 {
@@ -103,33 +107,78 @@ int getCordY(char game, int player, int phase)
 		phase = 0;
 		if (player == 1)
 		{
-			printf("Where would you like to put an X value (xcord)");
+			printf("Where would you like to put an X value (ycord) ");
 			scanf_s("%d", &ycord);
 		}
 		else if (player == 2)
 		{
-			printf("Where would you like to put an O value (xcord)");
+			printf("Where would you like to put an O value (ycord) ");
 			scanf_s("%d", &ycord);
 		}
 		break;
 	}
 	
 	printf("\n");
-
-	return 0;
+	return ycord-1;
 }
 // try this again
 
-
-
-int endstate()
+int endState(int winner)
 {
-	return 0;
+	if (winner == 3)
+	{
+		printf("There is a tie,\n");
+		printf("You're both equally good.\n");
+		printf("Ending program... (hit enter)\n");
+		_getch();
+	}
+	else
+	{
+		printf("Player: ");
+		printf("%c", winner);
+		printf(" is the winner.\n");
+		printf("Ending program... (hit enter)\n");
+		_getch();
+	}
+
+	return 1;
 }
 
-int errorState()
+void errorState()
 {
-	return 0;
+	char c[] = "You have choosen an invalid location.";
+
+	printf("%s", c);
+	printf("\n \n");
+}
+
+bool checkSpace(char *ptr, int x, int y)
+{
+	if (x < 0 || y < 0)
+	{
+		return false;
+	}
+
+	else if (ptr[x+(y*3)] != ' ')
+	{
+		return false;
+	}
+
+	return true;
+}
+
+int updateTurn(int player)
+{
+	if (player == 1)
+	{
+		player++;
+	}
+	else
+	{
+		player--;
+	}
+
+	return player;
 }
 
 void fillArray(char* ptr, int size)
@@ -137,7 +186,6 @@ void fillArray(char* ptr, int size)
 	for (int i = 0; i < size; i++)
 	{
 		*ptr = ' ';
-		printf("%c", *ptr);
 		ptr++;
 	}
 
@@ -145,4 +193,22 @@ void fillArray(char* ptr, int size)
 	{
 		ptr--;
 	}
+}
+
+void draw(char* ptr)
+{
+	system("cls");
+
+	for (int i = 0; i < 9; i++)
+	{
+		if (i % 3 == 0 && i != 0)
+		{
+			printf("\n");
+		}
+		printf("%c", ptr[i]);
+		printf(" ");
+	}
+
+	printf("\n");
+	printf("\n");
 }

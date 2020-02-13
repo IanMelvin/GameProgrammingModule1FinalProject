@@ -8,5 +8,6 @@ int main()
 	printf("Ready to launch (Hit enter)\n");
 	_getch();
 
+	system("cls");
 	launchTicTacToe();
 }
