@@ -32,47 +32,55 @@ Contributers: Loki Sanguine & Ian Melvin
 #include <stdio.h>
 #include <stdbool.h>
 
-int getCordX(char game, int player, int phase)
+int getCordX(char game, int player, int phase)//gets xcoord for alteration of board, returns xcord
 {
 	int xcord;
 	switch (game)
 	{
 	case 'B':
-		if (phase == 0 && player == 1)
+		if (phase == 0 && player %2 == 0)
 		{
-			//to be continued
+			printf("Where would you like to place your ship Player 1? (xcoord)");
+			
 		}
-		else if (phase == 0 && player == 2)
+		else if (phase == 0 && player %2 != 0)//Phase 0 placing ships
 		{
-			//to be continued
+			printf("Where would you like to place your ship Player 2? (xcoord)");
 		}
-		else if (phase == 1 && player == 1)
+		else if (phase == 1 && player %2 == 0)
 		{
-			printf("Where would you like to fire? (xcoord)");
+			printf("Where would you like to fire Player 1?(xcoord)");
+			
+		}
+		else if (phase == 1 && player % 2 != 0)//phase 1 firing
+		{
+			printf("Where would you like to fire Player 2?(xcoord)");
+
 		}
 		break;
+		
 	case 'C':
-	
-		if (player == 1 && phase == 1)
+
+		if (player %2 == 0 && phase == 1)
 		{
 			printf("Player: White, what piece do you want to move? (xcoord)");
 		}
-		else if (player == 2 && phase == 1)
+		else if (player % 2 != 0 && phase == 1)
 		{
 			printf("Player: Black, what piece do you want to move? (xcoord)");
 		}//phase one selecting piece
-		else if (player == 1 && phase == 2)
+		else if (player %2 == 0 && phase == 2)
 		{
 			printf("Player: White, where do you want to move? (xcoord)");
 		}
-		else if (player == 2 && phase == 2)
+		else if (player %2 != 0 && phase == 2)
 		{
 			printf("Player: Black, where do you want to move? (xcoord)");
 		}//phase two finding where the piece is moving 
-	break;
+		break;
 	case 'M':
 		phase = 0;
-		printf("Which set of marbles would you like to move?(xcoord");
+		printf("Which set of marbles would you like to move?(xcoord");//selects pit of counterclockwise moving marbles
 		break;
 	case 'T':
 		phase = 0;
@@ -90,68 +98,86 @@ int getCordX(char game, int player, int phase)
 	printf("\n");
 
 
-	return xcord-1;
+	return xcord - 1;
 }
-int getCordY(char game, int player, int phase)
+int getCordY(char game, int player, int phase)//gets ycoord for alteration of board, returns ycord
 {
 	int ycord;
 	switch (game)
 	{
 	case 'B':
-		if (phase == 0 && player == 1)
+		if (phase == 0 && player %2 == 0)
 		{
-			//to be continued
+			print("Where would you like to place a ship?");
 		}
-		else if (phase == 0 && player == 2)
+		else if (phase == 0 && player % 2 != 0)
 		{
-			//to be continued
+			print("Where would you like to place a ship?");//Phase 0 placing ships
 		}
-		else if (phase == 1 && player == 1)
+		else if (phase == 1 && player % 2 == 0)
 		{
 			printf("Where would you like to fire? (ycoord)");
+		
 		}
+		else if (phase == 1 && player % 2 != 0)
+		{
+			printf("Where would you like to fire? (ycoord)");
+
+		}//phase 1 firing
+
 		break;
 	case 'C':
-		if (player == 1 && phase == 1)
+		if (player % 2 == 0 && phase == 1)
 		{
 			printf("Player: White, what piece do you want to move? (ycoord)");
+			scanf_s("%d", &ycord);
 		}
-		else if (player == 2 && phase == 1)
+		else if (player % 2 != 0 && phase == 1)
 		{
 			printf("Player: Black, what piece do you want to move? (ycoord)");
+			
 		}//phase one selecting piece
-		else if (player == 1 && phase == 2)
+		else if (player % 2 == 0 && phase == 2)
 		{
 			printf("Player: White, where do you want to move? (ycoord)");
+		
 		}
-		else if (player == 2 && phase == 2)
+		else if (player % 2 != 0 && phase == 2)
 		{
 			printf("Player: Black, where do you want to move? (ycoord)");
+			scanf_s("%d", &ycord);
 		}//phase two finding where the piece is moving 
 		break;
 	case 'M':
 		phase = 0;
-		ycord = player;
+		if (player % 2 == 0)
+		{
+			ycord = 1;
+		}
+		else if(player % 2 != 0)
+		{
+			ycord = 2;
+		}//mancalla height = 2 therefore the height doesnt matter of the pit you are selecting you can only pick your own line
 		break;
 	case 'T':
 		phase = 0;
 		if (player == 1)
 		{
 			printf("Where would you like to put an X value (ycord) ");
-			scanf_s("%d", &ycord);
+			
 		}
 		else if (player == 2)
 		{
 			printf("Where would you like to put an O value (ycord) ");
-			scanf_s("%d", &ycord);
+			
 		}
 		break;
 	}
-	
+
 	printf("\n");
-	return ycord-1;
+	return ycord - 1;
 }
-// try this again
+
 
 /*
 	Purpose: Display the appropriate message for ending the game and return a value to end the game loop
@@ -189,6 +215,7 @@ int endState(int winner)
 	Return possibilities: NONE
 */
 void errorState()
+
 {
 	char c[] = "You have choosen an invalid location.";
 
@@ -203,14 +230,15 @@ void errorState()
 
 	Return possibilities: true or false
 */
-bool checkSpace(char *ptr, int x, int y)
+
+bool checkSpace(char* ptr, int x, int y)//checks if space is valid and yells at you if it isnt
 {
 	if (x < 0 || y < 0)
 	{
 		return false;
 	}
 
-	else if (ptr[x+(y*3)] != ' ')
+	else if (ptr[x + (y * 3)] != ' ')
 	{
 		return false;
 	}
@@ -226,6 +254,7 @@ bool checkSpace(char *ptr, int x, int y)
 	Return possibilities: 0 or 1
 */
 int updateTurn(int player)
+
 {
 	if (player == 1)
 	{
@@ -246,7 +275,7 @@ int updateTurn(int player)
 	
 	Return possibilities: NONE
 */
-void fillArray(char* ptr, int size)
+void fillArray(char* ptr, int size)//fills array with blanks
 {
 	for (int i = 0; i < size; i++)
 	{
