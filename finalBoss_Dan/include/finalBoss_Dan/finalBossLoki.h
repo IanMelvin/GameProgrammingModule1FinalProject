@@ -31,9 +31,9 @@ Contributers: Loki Sanguine & Ian Melvin
 
 #include <stdbool.h>
 
-int getCordX(char game, int player, int phase);
+int getCordX(char game, int player, int phase);//gets xcoord for alteration of board, returns xcord
 
-int getCordY(char game, int player, int phase);
+int getCordY(char game, int player, int phase);//gets ycoord for alteration of board, returns ycord
 
 
 /*
