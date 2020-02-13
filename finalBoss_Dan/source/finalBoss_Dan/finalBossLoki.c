@@ -194,21 +194,3 @@ void fillArray(char* ptr, int size)
 		ptr--;
 	}
 }
-
-void draw(char* ptr)
-{
-	system("cls");
-
-	for (int i = 0; i < 9; i++)
-	{
-		if (i % 3 == 0 && i != 0)
-		{
-			printf("\n");
-		}
-		printf("%c", ptr[i]);
-		printf(" ");
-	}
-
-	printf("\n");
-	printf("\n");
-}

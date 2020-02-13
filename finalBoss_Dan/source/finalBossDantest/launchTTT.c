@@ -24,8 +24,6 @@ int launchTicTacToe()
 	return 0;
 }
 
-
-
 int startGame(char *ptr, char game)
 {
 	int gameLoop = 0, xCoord = 0, yCoord = 0, players = 1, phase = 0;
@@ -133,4 +131,22 @@ int winner(char* ptr, int size)
 	}
 
 	return 0;
+}
+
+void draw(char* ptr)
+{
+	system("cls");
+
+	for (int i = 0; i < 9; i++)
+	{
+		if (i % 3 == 0 && i != 0)
+		{
+			printf("\n");
+		}
+		printf("%c", ptr[i]);
+		printf(" ");
+	}
+
+	printf("\n");
+	printf("\n");
 }
