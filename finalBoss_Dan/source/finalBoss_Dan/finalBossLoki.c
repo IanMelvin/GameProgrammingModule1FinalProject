@@ -32,7 +32,7 @@ Contributers: Loki Sanguine & Ian Melvin
 #include <stdio.h>
 #include <stdbool.h>
 
-int getCordX(char game, int player, int phase)//gets xcoord for alteration of board, returns xcord
+int getCordX(char game, int player, int phase)//gets xcoord for alteration of board, takes in character variable and 2 integers, returns xcord
 {
 	int xcord;
 	switch (game)
@@ -100,7 +100,7 @@ int getCordX(char game, int player, int phase)//gets xcoord for alteration of bo
 
 	return xcord - 1;
 }
-int getCordY(char game, int player, int phase)//gets ycoord for alteration of board, returns ycord
+int getCordY(char game, int player, int phase)//gets ycoord for alteration of board, takes in character variable and 2 integers, returns ycord
 {
 	int ycord;
 	switch (game)
