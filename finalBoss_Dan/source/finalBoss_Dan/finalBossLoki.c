@@ -102,7 +102,7 @@ int getCordX(char game, int player, int phase)//gets xcoord for alteration of bo
 }
 int getCordY(char game, int player, int phase)//gets ycoord for alteration of board, takes in character variable and 2 integers, returns ycord
 {
-	int ycord = 1;
+	int ycord;
 	switch (game)
 	{
 	case 'B':
