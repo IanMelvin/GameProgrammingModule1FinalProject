@@ -102,79 +102,70 @@ int getCordX(char game, int player, int phase)//gets xcoord for alteration of bo
 }
 int getCordY(char game, int player, int phase)//gets ycoord for alteration of board, takes in character variable and 2 integers, returns ycord
 {
-	int ycord;
+	int ycord = 1;
 	switch (game)
 	{
 	case 'B':
-		if (phase == 0 && player %2 == 0)
+		if (phase == 0 && player % 2 == 0)
 		{
-			printf("Where would you like to place a ship?");
+			printf("Where would you like to place your ship Player 1? (ycoord)");
+
 		}
-		else if (phase == 0 && player % 2 != 0)
+		else if (phase == 0 && player % 2 != 0)//Phase 0 placing ships
 		{
-			printf("Where would you like to place a ship?");//Phase 0 placing ships
+			printf("Where would you like to place your ship Player 2? (ycoord)");
 		}
 		else if (phase == 1 && player % 2 == 0)
 		{
-			printf("Where would you like to fire? (ycoord)");
-		
+			printf("Where would you like to fire Player 1?(ycoord)");
+
 		}
-		else if (phase == 1 && player % 2 != 0)
+		else if (phase == 1 && player % 2 != 0)//phase 1 firing
 		{
-			printf("Where would you like to fire? (ycoord)");
+			printf("Where would you like to fire Player 2?(ycoord)");
 
-		}//phase 1 firing
-
+		}
 		break;
+
 	case 'C':
+
 		if (player % 2 == 0 && phase == 1)
 		{
 			printf("Player: White, what piece do you want to move? (ycoord)");
-			scanf_s("%d", &ycord);
 		}
 		else if (player % 2 != 0 && phase == 1)
 		{
 			printf("Player: Black, what piece do you want to move? (ycoord)");
-			
 		}//phase one selecting piece
 		else if (player % 2 == 0 && phase == 2)
 		{
 			printf("Player: White, where do you want to move? (ycoord)");
-		
 		}
 		else if (player % 2 != 0 && phase == 2)
 		{
 			printf("Player: Black, where do you want to move? (ycoord)");
-			scanf_s("%d", &ycord);
 		}//phase two finding where the piece is moving 
 		break;
 	case 'M':
 		phase = 0;
-		if (player % 2 == 0)
-		{
-			ycord = 1;
-		}
-		else if(player % 2 != 0)
-		{
-			ycord = 2;
-		}//mancalla height = 2 therefore the height doesnt matter of the pit you are selecting you can only pick your own line
+		printf("Which set of marbles would you like to move?(ycoord");//selects pit of counterclockwise moving marbles
 		break;
 	case 'T':
 		phase = 0;
 		if (player == 1)
 		{
-			printf("Where would you like to put an X value (ycord) ");
-			
+			printf("Where would you like to put an X value (ycoord) ");
 		}
 		else if (player == 2)
 		{
-			printf("Where would you like to put an O value (ycord) ");
-			
+			printf("Where would you like to put an O value (ycoord) ");
 		}
 		break;
 	}
-
+	scanf_s("%d", &ycord);
 	printf("\n");
+
+
 	return ycord - 1;
 }
 

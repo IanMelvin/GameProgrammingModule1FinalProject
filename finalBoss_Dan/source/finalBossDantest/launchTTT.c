@@ -79,7 +79,7 @@ int startGame(char *ptr, char game)
 	{
 		xCoord = getCordX(game, players, phase);
 		yCoord = getCordY(game, players, phase);
-
+		printf("%d", yCoord);
 		if (checkSpace(ptr, xCoord, yCoord))
 		{
 			updateSpace(ptr, xCoord, yCoord, players);
